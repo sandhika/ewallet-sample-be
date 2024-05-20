@@ -1,0 +1,1 @@
+https://dev.to/zenstack/how-to-host-a-restful-api-on-vercel-3bk7
