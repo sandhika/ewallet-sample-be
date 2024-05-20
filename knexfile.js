@@ -3,15 +3,18 @@
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
+
+require('dotenv').config()
+
 module.exports = {
 
   development: {
     client: "pg",
     connection: {
-      host:'ep-white-grass-a1rsqh96-pooler.ap-southeast-1.aws.neon.tech',
-      database: 'verceldb',
-      user:     'default',
-      password: 'jLY78JoWendi',
+      host: process.env.POSTGRES_HOST,
+      database: process.env.POSTGRES_DATABASE,
+      user:     process.env.POSTGRES_USER,
+      password: process.env.POSTGRES_PASSWORD,
       ssl: { rejectUnauthorized: false }
     },
   },
@@ -19,10 +22,10 @@ module.exports = {
   staging: {
     client: 'postgresql',
     connection: {
-      host:'ep-white-grass-a1rsqh96-pooler.ap-southeast-1.aws.neon.tech',
-      database: 'verceldb',
-      user:     'default',
-      password: 'jLY78JoWendi'
+      host: process.env.POSTGRES_HOST,
+      database: process.env.POSTGRES_DATABASE,
+      user:     process.env.POSTGRES_USER,
+      password: process.env.POSTGRES_PASSWORD,
     },
     pool: {
       min: 2,
@@ -36,10 +39,10 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: {
-      host:'ep-white-grass-a1rsqh96-pooler.ap-southeast-1.aws.neon.tech',
-      database: 'verceldb',
-      user:     'default',
-      password: 'jLY78JoWendi'
+      host: process.env.POSTGRES_HOST,
+      database: process.env.POSTGRES_DATABASE,
+      user:     process.env.POSTGRES_USER,
+      password: process.env.POSTGRES_PASSWORD,
     },
     pool: {
       min: 2,
